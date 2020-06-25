@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "urf-8">
+        <title>Game of Life</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div>
+            <h1>Conway's Game of Life</h1>
+            <span id = "author">Jaeha Yi</div>
+        </div>
+        <p>This is my first program using HTML, JavaScript, and CSS! I implemented <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a>, a self-replicating system created by John Horton Conway in 1970.</p>
+        <p>Rules: </p>
+        <ol>
+            <li>Click on the tiles to color cells black (alive) or white (dead). </li>
+            <li>Dead cells become alive if there are exactly three neighboring alive cells.</li>
+            <li>Alive cells become dead if there is &lt 2 or &gt 3 neighboring alive cells.</li>
+            <li>Cells outside of the grid's boundaries are dead.</li>
+        </ol>
+        <p>Although its rules are simple, if there is sufficient space and memory, the program can execute any computer algorithm. </p>
+        <button onclick = "goButton()" id = "button1">Go!</button>
+        <button onclick = "clearButton()" id = "button2">Clear / Apply size</button>
+        <button onclick = "templateButton()">Load template</button>
+
+        <label for="templates">Choose a template:</label>
+        
+        <select name="templates" id="templates">
+            <option value="0">Gosper glider gun</option>
+            <option value="1">Pulsar</option>
+            <option value="2">R-pentomino</option>
+        </select>
+        <p class="label">Update time: <span id="timeDisplay"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="50" max="500" value="200" step = "5" class="slider" id="timeRange">
+        </div>
+        <p class="label">Cell size: <span id="sizeDisplay"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="4" max="20" value="10" class="slider" id="sizeRange">
+        </div>
+        <p class="label">Grid size: <span id="gridSizeDisplay"></span></p>
+        <div class="slidecontainer">
+            <input type="range" min="320" max="2520" value="640" step = "20" class="slider" id="gridSizeRange">
+        </div>
+
+        <script src = "index.js"></script>
+    </body>
+</html>
